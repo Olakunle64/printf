@@ -75,6 +75,7 @@ int _printf(const char *format, ...)
 	}
 		j++;
 	}
+	va_end(arg);
 	return (k + p);
 }
 
