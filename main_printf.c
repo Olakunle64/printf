@@ -39,7 +39,7 @@ int (*get_format(char *s, struct print_f *func_array))(va_list *)
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	pr func_array[] = {{"%c", print_char}, {"%s", print_string}, {'\0', NULL}};
+	pr func_array[] = {{"%c", print_char}, {"%s", print_string}};
 	int j = 0, k = 0, p = 0, (*pointer_store)(va_list *);
 
 	if (format == NULL)
@@ -47,27 +47,32 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	while (format && format[j])
 	{
-		if (format[j] == '%')
+	if (format[j] == '%' && format[j + 1] != '\0')
+	{
+		switch (format[j + 1])
 		{
-		if (format[j + 1] == 'c')
-		{
-		pointer_store = get_format(func_array[0].c, func_array);
+			case 'c':
+				pointer_store = get_format(func_array[0].c, func_array);
+				p += pointer_store(&arg);
+				j = j + 1;
+				break;
+			case 's':
+				pointer_store = get_format(func_array[1].c, func_array);
+				p += pointer_store(&arg);
+				j = j + 1;
+				break;
+			case '%':
+				_putchar(format[j + 1]);
+				j = j + 1;
+				p++;
+				break;
 		}
-		if (format[j + 1] == 's')
-		{
-			pointer_store = get_format(func_array[1].c, func_array);
-		}
-		if (pointer_store)
-		{
-			p += pointer_store(&arg);
-			j = j + 1;
-		}
-		}
-		else
-		{
-			_putchar(format[j]);
-			k++;
-		}
+	}
+	else
+	{
+		_putchar(format[j]);
+		k++;
+	}
 		j++;
 	}
 	return (k + p);
