@@ -1,12 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-
-#include <stdio.h>
 #include <stdarg.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
 /**
  * struct print_f - structure containg two memebers
  * @c: string

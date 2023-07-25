@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -38,8 +39,7 @@ int (*get_format(char *s, struct print_f *func_array))(va_list *)
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	pr func_array[] = {{"%c", print_char}, {"%s", print_string},
-		{"%d", print_int}, {'\0', NULL}};
+	pr func_array[] = {{"%c", print_char}, {"%s", print_string}, {'\0', NULL}};
 	int j = 0, k = 0, p = 0, (*pointer_store)(va_list *);
 
 	if (format == NULL)
@@ -53,13 +53,9 @@ int _printf(const char *format, ...)
 		{
 		pointer_store = get_format(func_array[0].c, func_array);
 		}
-		else if (format[j + 1] == 's')
+		if (format[j + 1] == 's')
 		{
 			pointer_store = get_format(func_array[1].c, func_array);
-		}
-		else if (format[j + 1] == 'd' || format[j + 1] == 'i')
-		{
-			pointer_store = get_format(func_array[2].c, func_array);
 		}
 		if (pointer_store)
 		{

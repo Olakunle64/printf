@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
@@ -11,7 +15,6 @@ int print_string(va_list *arg)
 {
 	int i;
 	int len;
-	char *ptr;
 	char *str;
 
 	str = va_arg(*arg, char *);
@@ -26,8 +29,8 @@ int print_string(va_list *arg)
 	}
 	else
 	{
-		ptr = "(null)";
-		write(1, ptr, 6);
+		str = "(null)";
+		write(1, str, 6);
 		return (0);
 	}
 }
@@ -64,41 +67,4 @@ int count_digit(int num)
 		num = num / 10;
 	}
 	return (j + 1);
-}
-
-/**
- * print_int - print an integer
- * @arg: address of variable arg
- *
- * Return: return the number of digit printed
- */
-
-int print_int(va_list *arg)
-{
-	int *arr, i, count, num, output = 0;
-
-	num = va_arg(*arg, int);
-	if (num < 0)
-	{
-		_putchar('-');
-		num = -1 * num;
-		output++;
-	}
-	count = count_digit(num);
-	arr = malloc((count + 1) * sizeof(int));
-	if (arr == NULL)
-	{
-		return (0);
-	}
-	for (i = 0; i < count; i++)
-	{
-		arr[i] = num % 10;
-		num = num / 10;
-	}
-	for (i = count - 1; i >= 0; i--)
-	{
-		putchar(arr[i] + '0');
-	}
-	free(arr);
-	return (output + count);
 }
