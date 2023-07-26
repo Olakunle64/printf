@@ -24,7 +24,7 @@ int print_string(char *str)
 	}
 	while (*str)
 	{
-		_putchar(*str);
+		print_char(*str);
 		str++;
 		by_count++;
 	}
