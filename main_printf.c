@@ -42,6 +42,7 @@ int _printf(const char *format, ...)
 					if (format[j] == ' ' || format[j] == '#' || *format == '+')
 					{
 						by_c++;
+						j++;
 					}
 					if (by_c == -1)
 						return (by_c);
