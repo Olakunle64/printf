@@ -13,8 +13,6 @@ int flag(char c)
 {
 	int count = 0;
 
-	if (c == '\0')
-		return (0);
 	if (c == ' ' || c == '0' || c == '#' || c == '+')
 		count++;
 	else
@@ -39,12 +37,11 @@ int flag(char c)
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int by_c = -1;
+	int by_c = 0;
 	int j = 0;
 
 	if (format != NULL)
 	{
-		by_c = 0;
 		va_start(arg, format);
 		while (format[j] != '\0')
 		{
@@ -63,7 +60,10 @@ int _printf(const char *format, ...)
 					by_c += print_char(format[j]);
 				else
 				{
-					by_c += flag(format[j]);
+					if (format[j] == '\0')
+						return (-1);
+					else
+						by_c += flag(format[j]);
 				}
 			}
 			j++;
