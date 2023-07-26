@@ -57,6 +57,8 @@ int _printf(const char *format, ...)
 					by_c +=  print_char((char)va_arg(arg, int));
 				else if (format[j] == 's')
 					by_c += print_string(va_arg(arg, char *));
+				else if (format[j] == 'i' || format[j] == 'd')
+					by_c += print_int(va_arg(arg, int));
 				else if (format[j] == '%')
 					by_c += print_char(format[j]);
 				else

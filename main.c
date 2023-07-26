@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <limits.h>
 
 int main(void)
 {
@@ -12,7 +13,9 @@ int main(void)
 	printf("%k\n");
 	_printf("%!\n");
 	printf("%!\n");
-	printf("%d, %d\n", len1, len2);
+	_printf("%d, %d\n", len1, len2);
+	_printf("%d\n", INT_MAX);
+	_printf("%d\n", INT_MIN);
 
 	return (0);
 }
