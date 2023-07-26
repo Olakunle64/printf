@@ -28,6 +28,8 @@ int _printf(const char *format, ...)
 			{
 				by_c += print_char(format[j]);
 			}
+			else if (format[j + 1] == '\0')
+				return (by_c);
 			else
 			{
 				j++;
