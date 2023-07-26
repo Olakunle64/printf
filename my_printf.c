@@ -37,11 +37,12 @@ int flag(char c)
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int by_c = 0;
+	int by_c = -1;
 	int j = 0;
 
 	if (format != NULL)
 	{
+		by_c = 0;
 		va_start(arg, format);
 		while (format[j] != '\0')
 		{
@@ -62,8 +63,7 @@ int _printf(const char *format, ...)
 				{
 					if (format[j] == '\0')
 						return (-1);
-					else
-						by_c += flag(format[j]);
+					by_c += flag(format[j]);
 				}
 			}
 			j++;
