@@ -3,6 +3,28 @@
 #include "main.h"
 
 /**
+ * flag - check if it is printf flag
+ * @c: character
+ *
+ * Return: 1 if it is a printf flag or 0 if it is not
+ */
+
+int flag(char c)
+{
+	int count = 0;
+
+	if (c == ' ' || c == '0' || c == '#' || c == '+')
+		count++;
+	else
+	{
+		print_char('%');
+		print_char(c);
+		count = count + 2;
+	}
+	return (count);
+}
+
+/**
  * _printf - produces output according to a format
  * @format: character string.
  *
@@ -39,14 +61,7 @@ int _printf(const char *format, ...)
 					by_c += print_char(format[j]);
 				else
 				{
-					if (format[j] == ' ' || format[j] == '#' || *format == '+'
-							|| format[j] == '0')
-						by_c++;
-					else
-					{
-						by_c += print_char('%');
-						by_c += print_char(format[j]);
-					}
+					by_c += flag(format[j]);
 					if (by_c == -1)
 						return (by_c);
 				}
