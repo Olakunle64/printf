@@ -64,8 +64,6 @@ int _printf(const char *format, ...)
 				else
 				{
 					by_c += flag(format[j]);
-					if (by_c == -1)
-						return (by_c);
 				}
 			}
 			j++;
