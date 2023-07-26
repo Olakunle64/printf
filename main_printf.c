@@ -4,6 +4,23 @@
 #include "main.h"
 
 /**
+ * count - count numbers
+ * @c: character
+ * @k: integer to be incrementing
+ *
+ * Return: return the value of k
+ */
+
+int count(char c, int k)
+{
+	{
+		_putchar(c);
+		k = k + 1;
+	}
+	return (k);
+}
+
+/**
  * get_format - get the appropriate function for the format
  * @s: string storing the format
  * @func_array: structure
@@ -47,7 +64,7 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	while (format && format[j])
 	{
-	if (format[j] == '%' && format[j + 1] != '\0')
+	if (format[j] == '%' && format[j + 1] != '\0' && format[j + 2] != ' ')
 	{
 		switch (format[j + 1])
 		{
@@ -66,16 +83,28 @@ int _printf(const char *format, ...)
 				j = j + 1;
 				p++;
 				break;
+			case ' ':
+				if (format[j + 2] != ' ' && format[j + 2] != '\0')
+				{
+					_putchar(format[j + 1]);
+					p++;
+					j++;
+
+				}
+				else
+				{
+				_putchar(' ');
+				j = j + 1;
+				p--;
+				}
 		}
 	}
 	else
 	{
-		_putchar(format[j]);
-		k++;
+		k = count(format[j], k);
 	}
 		j++;
 	}
 	va_end(arg);
 	return (k + p);
 }
-

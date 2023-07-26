@@ -31,7 +31,7 @@ int print_string(va_list *arg)
 	{
 		str = "(null)";
 		write(1, str, 6);
-		return (0);
+		return (6);
 	}
 }
 
