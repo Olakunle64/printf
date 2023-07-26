@@ -13,6 +13,8 @@ int flag(char c)
 {
 	int count = 0;
 
+	if (c == '\0')
+		return (0);
 	if (c == ' ' || c == '0' || c == '#' || c == '+')
 		count++;
 	else
