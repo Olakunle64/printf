@@ -16,39 +16,39 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	int by_c = -1;
-	int j = 0;
 
 	if (format != NULL)
 	{
 		by_c = 0;
 		va_start(arg, format);
-		while (format[j])
+		while (*format != '\0')
 		{
-			if (format[j] != '%')
+			if (*format != '%')
 			{
-				by_c += _putchar(format[j]);
+				by_c += _putchar(*format);
 			}
 			else
 			{
-				j++;
-				if (format[j] == 'c')
+				format++;
+				if (*format == 'c')
 					by_c +=  print_char((char)va_arg(arg, int));
-				else if (format[j] == 's')
+				else if (*format == 's')
 					by_c += print_string(va_arg(arg, char *));
-				else if (format[j] == '%')
-					_putchar(format[j]);
+				else if (*format == '%')
+					_putchar(*format);
 				else
 				{
-					if (format[j] == ' ' || format[j] == '#' || *format == '+')
+					if (*format == ' ' || *format == '#' || *format == '+'
+							|| *format == '0')
 					{
 						by_c++;
-						j++;
+						format++;
 					}
 					if (by_c == -1)
 						return (by_c);
 				}
 			}
-			j++;
+			format++;
 		}
 		va_end(arg);
 	}
