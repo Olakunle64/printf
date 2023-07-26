@@ -20,7 +20,6 @@ int _printf(const char *format, ...)
 
 	if (format != NULL)
 	{
-		by_c = 0;
 		va_start(arg, format);
 		while (format[j])
 		{

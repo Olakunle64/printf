@@ -8,7 +8,12 @@
  * Return: On Success 1.
  * On error, -1 is returned, and err no is set appropriately.
  */
-int _putchar(char c)
+int print_char(char c)
 {
-	return (write(1, &c, 1));
+	int count;
+
+	count = (write(1, &c, 1));
+	if (count)
+		return (1);
+	return (0);
 }
