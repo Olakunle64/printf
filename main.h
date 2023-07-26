@@ -18,8 +18,6 @@ int print_char(va_list *arg);
 int print_string(va_list *arg);
 int (*get_format(char *s, struct print_f *func_array))(va_list *);
 int _putchar(char c);
-int print_int(va_list *arg);
-int count_digit(int num);
 int count(char c, int k);
 
 #endif /* MAIN_H */
