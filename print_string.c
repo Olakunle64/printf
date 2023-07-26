@@ -14,12 +14,12 @@ int print_string(char *str)
 
 	if (str == NULL)
 	{
-		_putchar('(');
-		_putchar('n');
-		_putchar('u');
-		_putchar('l');
-		_putchar('l');
-		_putchar(')');
+		print_char('(');
+		print_char('n');
+		print_char('u');
+		print_char('l');
+		print_char('l');
+		print_char(')');
 		return (6);
 	}
 	while (*str)
