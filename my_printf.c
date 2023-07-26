@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	{
 		by_c = 0;
 		va_start(arg, format);
-		while (format[j])
+		while (format[j] != '\0')
 		{
 			if (format[j] != '%')
 			{
@@ -36,10 +36,11 @@ int _printf(const char *format, ...)
 				else if (format[j] == 's')
 					by_c += print_string(va_arg(arg, char *));
 				else if (format[j] == '%')
-					print_char(format[j]);
+					by_c += print_char(format[j]);
 				else
 				{
-					if (format[j] == ' ' || format[j] == '#' || *format == '+')
+					if (format[j] == ' ' || format[j] == '#' || *format == '+'
+							|| format[j] == '0')
 					{
 						by_c++;
 					}
