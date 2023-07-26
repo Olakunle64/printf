@@ -43,7 +43,10 @@ int _printf(const char *format, ...)
 							|| format[j] == '0')
 						by_c++;
 					else
+					{
+						by_c += print_char('%');
 						by_c += print_char(format[j]);
+					}
 					if (by_c == -1)
 						return (by_c);
 				}
