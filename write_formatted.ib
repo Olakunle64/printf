@@ -10,6 +10,6 @@
 static int wwrite_formatted_string(const char *format, va_list args)
 {
 	char buffer[BUFFER_SIZE];
-	intcount = vsnprintf(buffer, BUFFER_SIZE, fomat, args);
-	return write(1, buffer, count);
+	int count = vsnprintf(buffer, BUFFER_SIZE, fomat, args);
+	return (write(1, buffer, count));
 }
