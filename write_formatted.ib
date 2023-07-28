@@ -1,0 +1,15 @@
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
+#define BUFFER_SIZE 1024
+
+/**
+ * write a formatted string
+ */
+static int wwrite_formatted_string(const char *format, va_list args)
+{
+	char buffer[BUFFER_SIZE];
+	intcount = vsnprintf(buffer, BUFFER_SIZE, fomat, args);
+	return write(1, buffer, count);
+}
