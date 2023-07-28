@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdarg.h>
+/**
+ * my_printf
+ */
 
 void my_printf(const char *format, ...) {
     va_list args;
@@ -15,10 +18,8 @@ void my_printf(const char *format, ...) {
                putchar('%');
                 putchar(*format);
             }
-        } else {
-            putchar(*format);
         }
-        format++;
+	format++;
     }
     va_end(args);
 }
