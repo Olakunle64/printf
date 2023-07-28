@@ -1,13 +1,13 @@
 #include "main.h"
+#include <stddef.h>
 #include <stdio.h>
 
 int main(void)
 {
-	_printf("%\n");
-	printf("%\n");
-	_printf("%k\n");
-	printf("%k\n");
-	_printf("%!\n");
-	printf("%!\n");
+	int k = _printf("%o\n", 101);
+	printf("%o\n", 101);
+	_printf("%r\n", "KUNLE");
+	_printf("%r\n", NULL);
+	_printf("%d\n", k);
 	return (0);
 }

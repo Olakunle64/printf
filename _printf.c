@@ -9,12 +9,14 @@
  * Return: 1 if it is a printf flag or 0 if it is not
  */
 
-int flag(char c)
+int flag(char c, va_list arg)
 {
 	int count = 0;
 
 	if (c == ' ' || c == '0' || c == '#' || c == '+')
 		count++;
+	else if (c == 'o')
+		count += print_octal(va_arg(arg, unsigned int));
 	else
 	{
 		print_char('%');
@@ -58,7 +60,7 @@ int _printf(const char *format, ...)
 				else if (format[j] == 'i' || format[j] == 'd')
 					by_c += print_int(va_arg(arg, int));
 				else if (format[j] == 'b')
-					by_c += print_binary(va_arg(arg, unsigned int), 0);
+					by_c += print_binary(va_arg(arg, unsigned int));
 				else if (format[j] == 'r')
 					by_c += print_rev(va_arg(arg, char *));
 				else if (format[j] == '%')
@@ -67,7 +69,7 @@ int _printf(const char *format, ...)
 				{
 					if (format[j] == '\0')
 						return (-1);
-					by_c += flag(format[j]);
+					by_c += flag(format[j], arg);
 				}
 			}
 			j++;

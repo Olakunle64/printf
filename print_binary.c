@@ -1,22 +1,60 @@
 #include "main.h"
 
 /**
- * print_binary - convert an unsigned integer to binary
+ * print_bit - print all bit in an unsigned integer
  * @num: unsigned integer
  *
- * Return: return bytes printed.
+ * Return: void
  */
 
-int print_binary(unsigned int num, int i)
+void print_bit(unsigned int num)
 {
-	int bit;
-
+	if (num == 0)
+	{
+		print_char('0');
+		return;
+	}
 	if (num / 2 == 0)
 	{
 		print_char('1');
-		return (0);
+		return;
 	}
-	bit = print_binary(num / 2, i + 1);
+	print_bit(num / 2);
 	print_int(num % 2);
-	return (bit + 1);
+}
+
+/**
+ * count_bit - count the number of bit in an unsigned integer
+ * @num unsigned integer
+ *
+ * Return: return number of bits
+ */
+
+int count_bit(unsigned int num)
+{
+	int i = 1;
+
+	while (num / 2 != 0)
+	{
+		num = num / 2;
+		i++;
+	}
+	return (i);
+}
+
+/**
+ * print_binary - convert an unsigned integer to binary
+ * @num: unsigned integer
+ *
+ * Return: return the number of bytes printed
+ */
+
+int print_binary(unsigned int num)
+{
+	int count;
+
+	print_bit(num);
+	count = count_bit(num);
+
+	return (count);
 }

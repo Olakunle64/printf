@@ -5,12 +5,16 @@
 int _printf(const char *format, ...);
 int print_char(char c);
 int print_string(char *str);
-int flag(char c);
+int flag(char c, va_list arg);
 int print_int(int num);
 int count_digit(int num);
-int bit_count(unsigned int num);
-int print_binary(unsigned int num, int i);
+int print_binary(unsigned int num);
+void print_bit(unsigned int num);
+int count_bit(unsigned int num);
 int _strlen(char *str);
 int print_rev(char *s);
+void print_octal_bit(unsigned int num);
+int count_octal_bit(unsigned int num);
+int print_octal(unsigned int num);
 
 #endif /* MAIN_H */
