@@ -47,9 +47,7 @@ int _printf(const char *format, ...)
 		while (format[j] != '\0')
 		{
 			if (format[j] != '%')
-			{
 				by_c += print_char(format[j]);
-			}
 			else
 			{
 				j++;
@@ -59,6 +57,10 @@ int _printf(const char *format, ...)
 					by_c += print_string(va_arg(arg, char *));
 				else if (format[j] == 'i' || format[j] == 'd')
 					by_c += print_int(va_arg(arg, int));
+				else if (format[j] == 'b')
+					by_c += print_binary(va_arg(arg, unsigned int), 0);
+				else if (format[j] == 'r')
+					by_c += print_rev(va_arg(arg, char *));
 				else if (format[j] == '%')
 					by_c += print_char(format[j]);
 				else
