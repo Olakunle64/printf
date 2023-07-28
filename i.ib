@@ -18,9 +18,8 @@ void my_printf(const char *format, ...) {
         } else {
             putchar(*format);
         }
-
-        format++;
     }
+        format++;
 
     va_end(args);
 }
