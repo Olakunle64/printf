@@ -6,5 +6,5 @@
 
 static int write_string(const char *str)
 {
-	return write(1, str, strlen(str));
+	return (write(1, str, strlen(str)));
 }
