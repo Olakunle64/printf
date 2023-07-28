@@ -12,8 +12,7 @@ void my_printf(const char *format, ...) {
                 int num = va_arg(args, int);
                 printf("%d", num);
             } else {
-                // Handle unsupported specifiers here (e.g., %s, %f, etc.)
-                putchar('%');
+               putchar('%');
                 putchar(*format);
             }
         } else {
