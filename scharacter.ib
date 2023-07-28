@@ -1,0 +1,11 @@
+#include <unistd.h>
+#include <stdlib.h>
+#define BUFFER_SIZE 1014
+
+/**
+ * write_char - A function to write a single character to stdout
+ */
+static int write_char(char c)
+{
+	return write(1, &c, 1);
+}
