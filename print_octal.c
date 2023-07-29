@@ -25,7 +25,7 @@ void print_octal_bit(unsigned int num)
 
 /**
  * count_octal_bit - count the number of bit in an unsigned integer
- * @num unsigned integer
+ * @num: unsigned integer
  *
  * Return: return number of bits
  */
