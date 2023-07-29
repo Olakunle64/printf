@@ -23,5 +23,6 @@ int count_hexa_bit(unsigned int num);
 void print_hexa_bit(unsigned int num);
 void print_hexa_bit_lower(unsigned int num);
 int print_hexa_lower(unsigned int num);
+int print_buffer(char *str);
 
 #endif /* MAIN_H */
