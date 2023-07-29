@@ -16,7 +16,10 @@ void print_hexa_bit_lower(unsigned int num)
 	}
 	if (num / 16 == 0)
 	{
-		print_int(num);
+		if (num == 15)
+			print_char('f');
+		else
+			print_int(num);
 		return;
 	}
 	print_hexa_bit_lower(num / 16);
