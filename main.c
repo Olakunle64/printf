@@ -12,10 +12,10 @@ int main(void)
 	_printf("%d\n", k);
 	_printf("%u\n", -373673627);
 	printf("%u\n", -373673627);
-	_printf("%x\n", 540);
-	printf("%x\n", 540);
-	_printf("%u\n", 0);
-	printf("%u\n", 0);
+	_printf("%X\n", UINT_MAX);
+	printf("%X\n", UINT_MAX);
+	_printf("%x\n", -1024);
+	printf("%x\n", -1024);
 	
 	return (0);
 }

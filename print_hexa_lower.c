@@ -19,7 +19,7 @@ void print_hexa_bit_lower(unsigned int num)
 		print_int(num);
 		return;
 	}
-	print_hexa_bit(num / 16);
+	print_hexa_bit_lower(num / 16);
 	switch (num % 16)
 	{
 		case 10:
@@ -47,7 +47,7 @@ void print_hexa_bit_lower(unsigned int num)
 }
 
 /**
- * print_hexa_lower - convert an unsigned integer to hexa
+ * print_hexa_lower - convert an unsigned integer to hexadecimal
  * @num: unsigned integer
  *
  * Return: return the number of bytes printed

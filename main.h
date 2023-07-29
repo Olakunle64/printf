@@ -18,7 +18,7 @@ int count_octal_bit(unsigned int num);
 int print_octal(unsigned int num);
 int count_unsigned_digit(unsigned int num);
 int print_unsigned(unsigned int num);
-int print_hexa(unsigned int num);
+int print_hexa_upper(unsigned int num);
 int count_hexa_bit(unsigned int num);
 void print_hexa_bit(unsigned int num);
 void print_hexa_bit_lower(unsigned int num);

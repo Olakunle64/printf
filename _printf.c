@@ -20,7 +20,7 @@ int flag(char c, va_list arg)
 	else if (c == 'u')
 		count += print_unsigned(va_arg(arg, unsigned int));
 	else if (c == 'X')
-		count += print_hexa(va_arg(arg, unsigned int));
+		count += print_hexa_upper(va_arg(arg, unsigned int));
 	else if (c == 'x')
 		count += print_hexa_lower(va_arg(arg, unsigned int));
 	else

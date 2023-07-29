@@ -57,9 +57,9 @@ int count_hexa_bit(unsigned int num)
 {
 	int i = 1;
 
-	while (num / 8 != 0)
+	while (num / 16 != 0)
 	{
-		num = num / 8;
+		num = num / 16;
 		i++;
 	}
 	return (i);
@@ -72,7 +72,7 @@ int count_hexa_bit(unsigned int num)
  * Return: return the number of bytes printed
  */
 
-int print_hexa(unsigned int num)
+int print_hexa_upper(unsigned int num)
 {
 	int count;
 
