@@ -14,8 +14,8 @@ int main(void)
 	printf("%u\n", -373673627);
 	_printf("%x\n", 540);
 	printf("%x\n", 540);
-	_printf("%u\n", UINT_MAX);
-	printf("%u\n", UINT_MAX);
+	_printf("%u\n", 0);
+	printf("%u\n", 0);
 	
 	return (0);
 }

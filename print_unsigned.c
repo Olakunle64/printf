@@ -31,10 +31,6 @@ int print_unsigned(unsigned int num)
 {
 	int *arr, i, by_count = 0, op_count = 0;
 
-	if (!(num > 0))
-	{
-		return (0);
-	}
 	by_count = count_unsigned_digit(num);
 	arr = malloc((by_count + 1) * sizeof(int));
 	if (arr == NULL)
