@@ -46,5 +46,5 @@ int rot13(char *str)
 	}
 	for (i = 0; i < len; i++)
 		print_char(s[i]);
-	return (i + 1);
+	return (i);
 }

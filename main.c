@@ -5,7 +5,7 @@
 
 int main(void)
 {
-	int len, len2;
+	int len, len2, p;
 	int k = _printf("%o\n", 101);
 	printf("%o\n", 101);
 	_printf("%r\n", "KUNLE");
@@ -20,7 +20,9 @@ int main(void)
 	len = printf("%#euryr\n");
 	len2 = _printf("%#euryr\n");
 	printf("%d, %d\n", len, len2);
-	_printf("%R %R\n", "kunle", "KUNLE");
+	_printf("%R %R\n", "xhayr", "KUNLE");
+	p = _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
+	printf("%d\n", p);
 	
 	return (0);
 }
