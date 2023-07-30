@@ -3,7 +3,7 @@
 
 /**
  * rot13 - Encode a string using rot13
- * @s: string
+ * @str: string
  *
  * Description: This function is meant to encode a string
  * using rot13 encryption.
