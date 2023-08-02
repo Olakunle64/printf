@@ -15,7 +15,7 @@ int main(void)
 	printf("%u\n", -373673627);
 	_printf("%X\n", UINT_MAX);
 	printf("%X\n", UINT_MAX);
-	_printf("%x\n", -1024);
+	_printf("\n%X\n", 10);
 	printf("%x\n", -1024);
 	len = printf("%#euryr\n");
 	len2 = _printf("%#euryr\n");
@@ -23,6 +23,7 @@ int main(void)
 	_printf("%R %R\n", "xhayr", "KUNLE");
 	p = _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
 	printf("%d\n", p);
+	_printf("%S\n", "Best\rSchool");
 	
 	return (0);
 }

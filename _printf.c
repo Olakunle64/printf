@@ -25,6 +25,8 @@ int flag(char c, va_list arg)
 		count += print_hexa_lower(va_arg(arg, unsigned int));
 	else if (c == 'R')
 		count += rot13(va_arg(arg, char *));
+	else if (c == 'S')
+		count += non_printable(va_arg(arg, char *));
 	else
 	{
 		print_char('%');

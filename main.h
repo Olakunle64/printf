@@ -25,5 +25,7 @@ void print_hexa_bit_lower(unsigned int num);
 int print_hexa_lower(unsigned int num);
 int print_buffer(char *str);
 int rot13(char *str);
+int non_printable(char *str);
+int char_to_unsigned(char c);
 
 #endif /* MAIN_H */
