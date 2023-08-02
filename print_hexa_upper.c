@@ -18,35 +18,35 @@ void print_hexa_bit(unsigned int num)
 	{
 		if (num == 15)
 			print_char('F');
+		else if (num == 14)
+			print_char('E');
+		else if (num == 13)
+			print_char('D');
+		else if (num == 12)
+			print_char('C');
+		else if (num == 11)
+			print_char('B');
+		else if (num == 10)
+			print_char('A');
 		else
 			print_int(num);
 		return;
 	}
 	print_hexa_bit(num / 16);
-	switch (num % 16)
-	{
-		case 10:
-			print_char('A');
-			break;
-		case 11:
-			print_char('B');
-			break;
-		case 12:
-			print_char('C');
-			break;
-		case 13:
-			print_char('D');
-			break;
-		case 14:
-			print_char('E');
-			break;
-		case 15:
-			print_char('F');
-			break;
-		default:
-			print_int(num % 16);
-			break;
-	}
+	if (num == 15)
+		print_char('F');
+	else if (num == 14)
+		print_char('E');
+	else if (num == 13)
+		print_char('D');
+	else if (num == 12)
+		print_char('C');
+	else if (num == 11)
+		print_char('B');
+	else if (num == 10)
+		print_char('A');
+	else
+		print_int(num);
 }
 
 /**
@@ -69,7 +69,7 @@ int count_hexa_bit(unsigned int num)
 }
 
 /**
- * print_hexa - convert an unsigned integer to hexadecimal
+ * print_hexa_upper - convert an unsigned integer to hexadecimal
  * @num: unsigned integer
  *
  * Return: return the number of bytes printed

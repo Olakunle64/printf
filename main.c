@@ -23,7 +23,7 @@ int main(void)
 	_printf("%R %R\n", "xhayr", "KUNLE");
 	p = _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
 	printf("%d\n", p);
-	_printf("%S\n", "Best\rSchool");
+	_printf("%S\n", "Best\nSchool");
 	
 	return (0);
 }
