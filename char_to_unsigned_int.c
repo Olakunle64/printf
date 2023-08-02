@@ -9,5 +9,5 @@
 
 int char_to_unsigned(char c)
 {
-	return ((unsigned)(c));
+	return ((unsigned int)(c));
 }

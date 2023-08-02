@@ -79,6 +79,7 @@ int print_hexa_upper(unsigned int num)
 {
 	int count;
 
+	print_char('0');
 	print_hexa_bit(num);
 	count = count_hexa_bit(num);
 
